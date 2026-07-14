@@ -1,201 +1,307 @@
-<!DOCTYPE html>
-<html>
+DOCTYPE html>
+<html lang="en">
 <head>
-<title>MSD Communication & General Enterprises</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSD Communication & General Enterprises</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-<style>
-body{
-    font-family: Arial;
-    margin:0;
-    background:#f4f4f4;
-}
+        /* HEADER */
+        header {
+            background-color: #003399;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #ffcc00;
+        }
 
-/* HEADER */
-header{
-    background:#003399;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+        /* NAV */
+        nav {
+            background-color: #ffcc00;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: black;
+            font-weight: bold;
+        }
 
-/* NAV */
-nav{
-    background:#ffcc00;
-    padding:10px;
-    text-align:center;
-}
+        /* BANNER */
+        .banner {
+            text-align: center;
+            padding: 20px;
+        }
+        .banner img {
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 10px;
+        }
 
-nav a{
-    text-decoration:none;
-    margin:15px;
-    color:black;
-    font-weight:bold;
-}
+        /* SEARCH BAR */
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 60%;
+            max-width: 400px;
+            border: 2px solid #003399;
+            border-radius: 5px;
+            font-size: 16px;
+        }
 
-/* BANNER */
-.banner{
-    text-align:center;
-    padding:20px;
-}
+        /* PRODUCTS SECTION */
+        h2.section-title {
+            text-align: center;
+            color: #003399;
+            margin-top: 30px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+        .card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .card p.price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003399;
+        }
 
-.banner img{
-    width:90%;
-    max-width:1000px;
-    border-radius:10px;
-}
+        /* BUTTONS */
+        .btn-whatsapp {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #25D366;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .btn-pay {
+            width: 100%;
+            padding: 10px;
+            background-color: #003399;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .btn-pay:hover {
+            background-color: #002266;
+        }
 
-/* PRODUCTS */
-.products{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    padding:10px;
-}
-
-.card{
-    background:white;
-    width:250px;
-    margin:15px;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 0 10px gray;
-    text-align:center;
-}
-
-.card img{
-    width:150px;
-    height:150px;
-    object-fit:contain;
-}
-
-/* BUTTON */
-button{
-    background:#003399;
-    color:white;
-    border:none;
-    padding:10px;
-    border-radius:5px;
-    cursor:pointer;
-    margin-top:10px;
-    width:100%;
-}
-
-button:hover{
-    background:#001f66;
-}
-
-/* FOOTER */
-footer{
-    background:#003399;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
-}
-@media screen and (max-width: 600px){
-    .card{
-        width:90%;
-    }
-
-    nav a{
-        display:block;
-        margin:10px 0;
-    }
-}
-</style>
-
+        /* FOOTER */
+        footer {
+            background-color: #003399;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<h1>MSD Communication & General Enterprises</h1>
-<p>Your Trusted Partner For Quality Accessories</p>
+    <h1>MSD Communication & General Enterprises</h1>
+    <p>Your Trusted Partner For Quality Accessories</p>
 </header>
 
 <nav>
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <div class="banner">
-<img src="MSD.jpg" alt="MSD Banner">
+    <img src="Msd.jpg" alt="MSD Banner">
 </div>
 
-<h2 align="center" id="products">Our Products</h2>
+<div class="search-container">
+    <input type="text" id="search" onkeyup="searchProduct()" placeholder="Nemi kayan da kake so anan...">
+</div>
+
+<h2 class="section-title" id="products">Our Products</h2>
 
 <div class="products">
 
-<div class="card">
-<img src="Powerbank.jpg">
-<h3>Oraimo Power Bank</h3>
-<p>20000mAh Original Power Bank</p>
-<p><b>₦15,000</b></p>
-<a href="https://paystack.com/pay/your-product-link">
-<button>Order Now</button>
-</a>
+    <!-- Card 1: Oraimo Power Bank -->
+    <div class="card">
+        <img src="Powerbank.jpg" alt="Oraimo Power Bank">
+        <h3>Oraimo Power Bank</h3>
+        <p>20000mAh Original Power Bank</p>
+        <p class="price">₦15,000</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Oraimo%20Power%20Bank" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(15000, 'Oraimo Power Bank')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 2: Wireless Earbuds -->
+    <div class="card">
+        <img src="Bluthood.jpg" alt="Wireless Earbuds">
+        <h3>Wireless Earbuds</h3>
+        <p>High Quality Bluetooth Earbuds</p>
+        <p class="price">₦7,500</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Wireless%20Earbuds" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(7500, 'Wireless Earbuds')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 3: Fast Charger -->
+    <div class="card">
+        <img src="Charger.jpg" alt="Fast Charger">
+        <h3>Fast Charger</h3>
+        <p>Original Fast Charging Adapter</p>
+        <p class="price">₦4,000</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Fast%20Charger" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(4000, 'Fast Charger')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 4: Smart Watch -->
+    <div class="card">
+        <img src="Smartwatch.jpg" alt="Smart Watch">
+        <h3>Smart Watch</h3>
+        <p>Latest Smart Watch Series</p>
+        <p class="price">₦18,000</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Smart%20Watch" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(18000, 'Smart Watch')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 5: Phone Cover (₦8,000) -->
+    <div class="card">
+        <img src="Cover.jpg" alt="Phone Cover">
+        <h3>Premium Phone Cover</h3>
+        <p>Strong & Fashionable Phone Covers</p>
+        <p class="price">₦8,000</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Phone%20Cover" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(8000, 'Phone Cover')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 6: Screen Guard -->
+    <div class="card">
+        <img src="Screenguard.jpg" alt="Screen Guard">
+        <h3>9D Screen Guard</h3>
+        <p>Tempered Glass Screen Protector</p>
+        <p class="price">₦1,000</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Screen%20Guard" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(1000, 'Screen Guard')" class="btn-pay">Pay Instantly</button>
+    </div>
+
+    <!-- Card 7: MP3 Player (₦7,500) -->
+    <div class="card">
+        <img src="Mp3.jpg" alt="MP3 Player">
+        <h3>Mini MP3 Player</h3>
+        <p>Portable Music Player with Bass</p>
+        <p class="price">₦7,500</p>
+        <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20MP3%20Player" class="btn-whatsapp">Order on WhatsApp</a>
+        <button onclick="payWithMonnify(7500, 'MP3 Player')" class="btn-pay">Pay Instantly</button>
+    </div>
+
 </div>
 
-<div class="card">
-<img src="Bluthood.jpg">
-<h3>Wireles Earbuds</h3>
-<p>High Quality Bluetooth Earbuds</p>
-<p><b>₦7,500</b></p>
-<a href="https://paystack.com/pay/your-product-link">
-<button>Order Now</button>
-</a>
-</div>
-
-<div class="card">
-<img src="Charger.jpg">
-<h3>Fast Charger</h3>
-<p>Original Fast Charging Adapter</p>
-<p><b>₦4,000</b></p>
-<a href="https://paystack.com/pay/your-product-link">
-<button>Order Now</button>
-</a>
-</div>
-
-<div class="card">
-<img src="Smartwatch.jpg">
-<h3>Smart Watch</h3>
-<p>Latest Smart Watch Series</p>
-<p><b>₦18,000</b></p>
-<a href="https://paystack.com/pay/your-product-link">
-<button>Order Now</button>
-</a>
-</div>
-
-</div>
-
-<center>
-   <button onclick="payWithCard()" style="width:200px;">Pay with ATM Card</button>
-</center>
-
-
-<script src="https://js.paystack.co/v1/inline.js"></script>
+<!-- MONNIFY SDK -->
+<script type="text/javascript" src="https://sdk.monnify.com/v1/sdk.js"></script>
 
 <script>
-function searchProduct(){
- let input = document.getElementById("search").value.toLowerCase();
- let cards = document.getElementsByClassName("card");
-    for(let i=0; i<cards.length; i++){
-     let text = cards[i].innerText.toLowerCase();
+// MONNIFY PAYMENT FUNCTION
+function payWithMonnify(amount, productName) {
+    let customerName = prompt("Shigar da Cikakken Sunanka:");
+    let customerEmail = prompt("Shigar da Email dinka:");
 
-     if(text.includes(input)){
-        cards[i].style.display = "block";
-     } else {
-        cards[i].style.display = "none";
-     }
-         }
- }
- </script>
- <footer>
- <h3>Contact Us</h3>
-  <p>09165105494 | 09018009911 | 07052509604</p>
-  <p>MSD Communication & General Enterprises </p>
+    if(!customerName || !customerEmail) {
+        alert("Dole ne ka saka Suna da Email don yin biya.");
+        return;
+    }
+
+    MonnifySDK.initialize({
+        amount: amount,
+        currency: "NGN",
+        reference: "MSD_" + Math.floor((Math.random() * 10000000) + 1),
+        customerName: customerName,
+        customerEmail: customerEmail,
+        apiKey: "YOUR_MONNIFY_PUBLIC_API_KEY", // Sanya Monnify Public Key dinka anan (MK_PROD_... ko MK_TEST_...)
+        contractCode: "YOUR_MONNIFY_CONTRACT_CODE", // Sanya Contract Code dinka na Monnify anan
+        paymentDescription: "Siyan " + productName + " daga MSD Enterprises",
+        isTestMode: true, // Idan ka tashi fara amfani da gaske, canza zuwa false
+        onComplete: function(response) {
+            alert("Masha Allah! Ka biya kudi cikin nasara.");
+            window.location.href = "https://wa.me/2349165105494?text=Na%20biya%20kudin%20" + encodeURIComponent(productName) + "%20ta%20Monnify.%20Suna:%20" + encodeURIComponent(customerName);
+        },
+        onClose: function(data) {
+            alert("Ka soke yin biya.");
+        }
+    });
+}
+
+// SEARCH FUNCTION
+function searchProduct() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        if (text.includes(input)) {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+<footer id="contact">
+    <h3>Contact Us</h3>
+    <p>09165105494 | 0901800911 | 07052509604</p>
+    <p>MSD Communication & General Enterprises</p>
+</footer>
 
 </body>
 </html>
