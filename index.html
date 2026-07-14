@@ -1,4 +1,4 @@
-DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -165,11 +165,11 @@ DOCTYPE html>
 </nav>
 
 <div class="banner">
-    <img src="Msd.jpg" alt="MSD Banner">
+    <img src="MSD.jpg" alt="MSD Banner">
 </div>
 
 <div class="search-container">
-    <input type="text" id="search" onkeyup="searchProduct()" placeholder="Nemi kayan da kake so anan...">
+    <input type="text" id="search" onkeyup="searchProduct()" placeholder="Search for products here...">
 </div>
 
 <h2 class="section-title" id="products">Our Products</h2>
@@ -229,11 +229,11 @@ DOCTYPE html>
     <!-- Card 6: Screen Guard -->
     <div class="card">
         <img src="Screenguard.jpg" alt="Screen Guard">
-        <h3>9D Screen Guard</h3>
+        <h3>9D Super X Screen Protector</h3>
         <p>Tempered Glass Screen Protector</p>
-        <p class="price">₦1,000</p>
+        <p class="price">₦1,500</p>
         <a href="https://wa.me/2349165105494?text=Hello%20MSD,%20I%20want%20to%20order%20the%20Screen%20Guard" class="btn-whatsapp">Order on WhatsApp</a>
-        <button onclick="payWithMonnify(1000, 'Screen Guard')" class="btn-pay">Pay Instantly</button>
+        <button onclick="payWithMonnify(1,500, 'Screen Guard')" class="btn-pay">Pay Instantly</button>
     </div>
 
     <!-- Card 7: MP3 Player (₦7,500) -->
@@ -254,11 +254,11 @@ DOCTYPE html>
 <script>
 // MONNIFY PAYMENT FUNCTION
 function payWithMonnify(amount, productName) {
-    let customerName = prompt("Shigar da Cikakken Sunanka:");
-    let customerEmail = prompt("Shigar da Email dinka:");
+    let customerName = prompt("Enter Your Full Name:");
+    let customerEmail = prompt("Enter Your Email Address:");
 
     if(!customerName || !customerEmail) {
-        alert("Dole ne ka saka Suna da Email don yin biya.");
+        alert("Full Name And Email Are Required  To Process The Payment.");
         return;
     }
 
@@ -270,14 +270,14 @@ function payWithMonnify(amount, productName) {
         customerEmail: customerEmail,
         apiKey: "YOUR_MONNIFY_PUBLIC_API_KEY", // Sanya Monnify Public Key dinka anan (MK_PROD_... ko MK_TEST_...)
         contractCode: "YOUR_MONNIFY_CONTRACT_CODE", // Sanya Contract Code dinka na Monnify anan
-        paymentDescription: "Siyan " + productName + " daga MSD Enterprises",
+        paymentDescription: "Purchase Of" + productName + " From MSD Enterprises",
         isTestMode: true, // Idan ka tashi fara amfani da gaske, canza zuwa false
         onComplete: function(response) {
-            alert("Masha Allah! Ka biya kudi cikin nasara.");
+            alert("Success! Your Payment Was Processed Successfully.");
             window.location.href = "https://wa.me/2349165105494?text=Na%20biya%20kudin%20" + encodeURIComponent(productName) + "%20ta%20Monnify.%20Suna:%20" + encodeURIComponent(customerName);
         },
         onClose: function(data) {
-            alert("Ka soke yin biya.");
+            alert(Payment Process Cancel.");
         }
     });
 }
