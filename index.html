@@ -295,21 +295,65 @@
     font-weight:bold;
 }
 
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:#0066cc;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.menu-icon{
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+nav a{
+    display:block;
+    padding:12px 20px;
+    color:#333;
+    text-decoration:none;
+}
+
+nav a:hover{
+    background:#f2f2f2;
+}
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>MSD Communication & General Enterprises</h1>
-    <p>Your Trusted Partner For Quality Accessories</p>
-</header>
+    <div class="logo">MSD Communication</div>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <nav id="menu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
 
 <h2 class="section-title" id="products">Our Products</h2>
@@ -743,6 +787,17 @@ function searchProduct() {
     });
 }
 
+}
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
 
 </script>
 
