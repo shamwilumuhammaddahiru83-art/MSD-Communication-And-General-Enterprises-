@@ -340,21 +340,24 @@ nav a:hover{
 </head>
 <body>
 
-<header>
     <div class="logo">MSD Communication</div>
 
     <div class="menu-icon" onclick="toggleMenu()">
         ☰
     </div>
 
-    <nav id="menu">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+   <nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="#home">🏠 Home</a>
+        <a href="#products">🛍 Products</a>
+        <a href="#about">ℹ️ About Us</a>
+        <a href="#contact">📞 Contact Us</a>
+        <a href="#login">👤 Login / Register</a>
+    </div>
+</nav>
+    
 
 <h2 class="section-title" id="products">Our Products</h2>
 
@@ -784,13 +787,11 @@ function searchProduct() {
         } else {
             card.style.display = "none";
         }
-    });
-}
+    }
 
-}
 
 function toggleMenu() {
-    var menu = document.getElementById("menu");
+    var menu = document.getElementById("mobileMenu");
 
     if (menu.style.display === "block") {
         menu.style.display = "none";
@@ -798,7 +799,6 @@ function toggleMenu() {
         menu.style.display = "block";
     }
 }
-
 </script>
 
 <footer class="footer">
