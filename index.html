@@ -332,6 +332,7 @@ header{
     width:220px;
     border-radius:10px;
     box-shadow:0 4px 15px rgba(0,0,0,.2);
+    z-index:999;
 }
 
 .mobile-menu a{
@@ -350,13 +351,9 @@ header{
 </head>
 <body>
 
+  <nav>
     <div class="logo">MSD Communication</div>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        ☰
-    </div>
-
-   <nav>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <div id="mobileMenu" class="mobile-menu">
@@ -364,10 +361,9 @@ header{
         <a href="#products">🛍 Products</a>
         <a href="#about">ℹ️ About Us</a>
         <a href="#contact">📞 Contact Us</a>
-        <a href="#login">👤 Login / Register</a>
+        <a href="#login">👤 Login</a>
     </div>
-</nav>
-    
+</nav>  
 
 <h2 class="section-title" id="products">Our Products</h2>
 
@@ -799,9 +795,8 @@ function searchProduct() {
         }
     }
 
-
 function toggleMenu() {
-    var menu = document.getElementById("mobileMenu");
+    const menu = document.getElementById("mobileMenu");
 
     if (menu.style.display === "block") {
         menu.style.display = "none";
